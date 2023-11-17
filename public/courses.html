@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code With Harry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    
+  </head>
+  <body>
+      <!-- Navbar Start -->
+      <nav
+      class="navbar navbar-expand-lg bg-body-tertiary bg-light border-bottom sticky-top"
+    >
+      <div class="container-fluid">
+        <a
+          class="navbar-brand text-primary border-bottom border-primary rounded-4"
+          href="#"
+          >CodeWithY@tendr@</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="container">
+            <ul class="nav justify-content-end navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-dark"
+                  aria-current="page"
+                  href="/public/index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/public/courses.html">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/public/tutorial.html">Tutorial</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/public/blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/public/notes.html">Notes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/public/contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/public/mygear.html">MyGear</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-dark" href="/public/workwithus.html"
+                  >Work with us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary mx-2"
+            data-bs-toggle="modal"
+            data-bs-target="#signupModal"
+          >
+            SignUp
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Button trigger modal -->
+    <!-- Button trigger modal -->
+    <!--login  Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="loginModalLabel">Login</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sign Up modal -->
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="signupModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="signupModalLabel">Sign Up</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputtext" class="form-label"
+                  >Username</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputtext1"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Confirm Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- first navbar end -->
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light border-bottom shadow  mb-5 bg-body rounded ">
+      <div class="container-fluid">
+        
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="container w-75 "><ul class="nav justify-content-center">
+              <li class="nav-item">
+                <a class="nav-link text-primary " aria-current="page" href="#">HTML</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">CSS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">JS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">C</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">C++</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">JAVA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">PYTHON</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">PHP</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-primary" href="#">REACT JS</a>
+              </li>
+              
+            </ul>
+            
+
+           </div>
+          <!-- <div class="container w-25 "> -->
+          <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <!-- <button class="btn btn-outline-primary" type="submit">Search</button> -->
+            </form>
+          <!-- </div> -->
+        </div>
+      </div>
+    </nav>
+
+<!-- navbar end -->
+<h2 class="text-center text-primary">Premium Courses</h2>
+     
+
+      <div class="row row-cols-1 row-cols-md-3 g-4 my-4">
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/web devlopement.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Web Dev Tutoials for Beginners</h5>
+              <p class="card-text">This is one of my favorite courses. In this series, you'll learn about HTML, CSS, JavaScript, and everything needed to be a job-ready web developer. Just hop on, man.</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/tailwind.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Tailwind Course In Hindi
+            </h5>
+              <p class="card-text">Complete Tailwind CSS Course by CodeWithHarry in Hindi - Learn Tailwind CSS from scratch for free!</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/javascript.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Ultimate JavaScript Course</h5>
+              <p class="card-text">This latest JavaScript course comes with premium curriculum that covers everything from basics to advance. On top of that, you will get my handwritten notes of JS for completely free. What are you waiting for? Just Enroll Buddy
+
+              </p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- second -->
+      <div class="row row-cols-1 row-cols-md-3 g-4 my-4">
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/python.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Python Tutorials - 100 Days of Code</h5>
+              <p class="card-text">
+                Python is one of the most demanded programming languages in the job market. Surprisingly, it is equally easy to learn and master Python. Let's commit our 100 days of code to python!</p>
+            </div>
+            <div class="card-footer">
+               <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/reactjs.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">React Js Tutorials For Beginners</h5>
+              <p class="card-text">
+                React is a free and open-source front-end JavaScript library. This series will cover React from starting to the end. We will learn react from the ground up!.</p>
+            </div>
+            <div class="card-footer">
+               <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/nextjs.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Next.js Tutorials For Beginners</h5>
+              <p class="card-text">
+                Complete Next.js Course by CodeWithHarry in Hindi - Learn Next.js from Scratch.</p>
+            </div>
+            <div class="card-footer">
+               <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- third -->
+      <div class="row row-cols-1 row-cols-md-3 g-4 my-4">
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/c.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">C Language Practice Programs</h5>
+              <p class="card-text">
+                This series contains programs for you to practice C Programming and related concepts. It has videos that will provide you with a proper explanation of the program and its logic.</p>
+            </div>
+            <div class="card-footer">
+               <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/python1.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Basic Python Programs With Code</h5>
+              <p class="card-text">
+                This series contains basic Python programs. It's a concise and precise course, so if you have a couple of minutes or an hour, just get started. This course will surely add some value.</p>
+            </div>
+            <div class="card-footer">
+               <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/c++.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">C++ Tutorials For Beginners</h5>
+              <p class="card-text">
+                This course contains all the concepts and exercises of the C++ language. If you're a mere beginner, you can start your coding journey with this course and ace your exams.</p>
+            </div>
+            <div class="card-footer">
+               <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fourth -->
+      <div class="row row-cols-1 row-cols-md-3 g-4 my-4">
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/django.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Python Django Tutorials For Beginners</h5>
+              <p class="card-text">
+                Django is a Python-based free and open-source web framework. If you already know Python and want to try web development, you can go with Django.</p>
+            </div>
+            <div class="card-footer">
+               <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/android.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Android Development Tutorials</h5>
+              <p class="card-text">
+                Android Development is one of the booming career options nowadays, and many people are learning Android because it feels so good to create own app. You can also grab this opportunity by enrolling in this course.</p>
+            </div>
+            <div class="card-footer">
+               <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/java.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Java Tutorials For Beginners</h5>
+              <p class="card-text">
+                If you don't know programming and want to start your career by learning Java as your first language, you can start with this course as it is for absolute beginners.</p>
+            </div>
+            <div class="card-footer">
+               <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <h2 class="text-center text-primary my-4">More Courses</h2>
+      <!-- fifth -->
+      <div class="row row-cols-1 row-cols-md-3 g-4 my-4">
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/dsa.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Data Structures and Algorithms Course</h5>
+              <p class="card-text">
+                Data Structure and Algorithm is one of the most crucial things to learn. This course will give you a complete understanding of Data Structure and its implementation.</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/php.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">PHP Tutorials For Beginners</h5>
+              <p class="card-text">
+                PHP is a general-purpose scripting language geared towards web development. This course will give you a complete and proper understanding of PHP concepts.</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/git.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Git and GitHub Tutorials For Beginners</h5>
+              <p class="card-text">
+                If you're serious about coding and want to make a career out of it, then do learn Git and GitHub because it is something that you'll use at every phase of your job.</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- sixth -->
+
+      <div class="row row-cols-1 row-cols-md-3 g-4 my-4">
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/datascience.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Data Science and Big Data Tutorials</h5>
+              <p class="card-text">
+                This course will give you a gist of Data Science and Big Data. I'm sure you must have heard about Data Scientist. This series contains the content to become one of them..</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/machinelearning.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">ML Tutorials For Beginners</h5>
+              <p class="card-text">
+                Machine Learning is one of the exciting topics nowadays. And if you want to get a glimpse of ML, don't think twice. Just get started with this course.</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mx-4">
+            <img src="/flask.jfif" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Web Dev Using Flask and Python</h5>
+              <p class="card-text">
+                
+                This course will teach you everything you need to know about web development using Flask. It will lead you through each and every concept of Flask and will give you a good initial start.</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-primary border rounded-5 ">Start Watching</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+<!-- footer -->
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+            <span class="mb-3 mb-md-0 text-muted">Copyright © 2022 CodeWithYatendra.com</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-muted" href="#"><img src="/fb.png" class="bi" width="50" height="50"alt=""></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><img src="/twitter.png" class="bi" width="50" height="50"alt=""></a></li>
+            <li class="ms-3"><a class="text-muted" href="#"><img src="/linkedin.png" class="bi" width="50" height="50"alt=""></a></li>
+            
+          </ul>
+        </footer>
+      </div>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
+  </html>
