@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const URI = "mongodb+srv://yatendrayadav2832:yatendra@cluster0.ldyncxi.mongodb.net/code_with_yatendra?retryWrites=true&w=majority";
+const URI = process.env.MONGODB_URI;
 
 const connectDb = async () => {
     try {
