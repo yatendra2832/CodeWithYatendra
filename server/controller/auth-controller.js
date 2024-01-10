@@ -1,5 +1,4 @@
 const User = require('../model/user-model')
-const bcrypt = require('bcrypt')
 // Home Logic
 const home = async (req, res) => {
     try {
@@ -49,7 +48,7 @@ const login = async (req, res) => {
             return res.status(400).send({ message: "Invalid Credential" });
         }
 
-        const user = bcrypt.compare(password, userExist.password);
+        const user = await userExist.comparePassword(password);
 
         if (user) {
             res.status(200).json({
