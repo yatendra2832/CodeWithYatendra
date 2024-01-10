@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+// UserSchema
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -26,6 +27,7 @@ const userSchema = new mongoose.Schema({
     }
 })
 
+// hashing the password
 userSchema.pre("save", async function (next) {
     const user = this;
     if (!user.isModified("password")) {

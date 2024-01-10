@@ -1,5 +1,5 @@
 const User = require('../model/user-model')
-
+const bcrypt = require('bcrypt')
 // Home Logic
 const home = async (req, res) => {
     try {
@@ -29,7 +29,7 @@ const registration = async (req, res) => {
         const userCreated = await User.create({ username, email, phone, password });
 
         res.status(200).json({
-            msg: "Registered User",
+            msg: "Registration Successfull",
             token: await userCreated.generateToken(),
             userId: userCreated._id.toString()
         });
@@ -41,9 +41,28 @@ const registration = async (req, res) => {
 
 const login = async (req, res) => {
     try {
-        res.status(200).send("<H1>Welcome to the Login Page</H1>");
+        const { email, password } = req.body;
+
+        const userExist = await User.findOne({ email });
+
+        if (!userExist) {
+            return res.status(400).send({ message: "Invalid Credential" });
+        }
+
+        const user = bcrypt.compare(password, userExist.password);
+
+        if (user) {
+            res.status(200).json({
+                message: "Login Successfully",
+                token: userExist.generateToken(),
+                userId: userExist._id.toString()
+            })
+        } else {
+            return res.status(400).send("Invalid Email and Password");
+        }
+
     } catch (error) {
-        console.log(error);
+        res.status(500).send("Internal Server Error : ", error);
     }
 }
 module.exports = { home, registration, login }
