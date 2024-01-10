@@ -3,9 +3,10 @@ const express = require('express');
 const app = express();
 const authRouter = require('./Router/auth-router');
 const connectDb = require('./utils/db')
-app.use(express.json());//middleware for parsing the json payloads .Important for parsing the json request data
+const errorMiddleware = require('./middleware/error.middleware')
+app.use(express.json());
 app.use('/api/auth', authRouter);
-
+app.use(errorMiddleware);
 
 const PORT = 5000;
 connectDb()
