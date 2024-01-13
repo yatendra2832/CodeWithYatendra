@@ -1,16 +1,31 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar1 from "./components/Navbar1";
+import Home from "./pages/home";
+import Courses from "./pages/Courses";
+import Tutorial from "./pages/Tutorial";
+import Notes from "./pages/Notes";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import WorkWithUs from "./pages/WorkWithUs";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1 className="text-center text-danger">
-        Hi Everyone Welcome to the Code With Yatendra
-      </h1>
+      <Router>
+        <Navbar1 />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/tutorial" element={<Tutorial />} />
+          <Route path="/notes" element={<Notes />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/workwithus" element={<WorkWithUs />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Router>
     </>
   );
 }
