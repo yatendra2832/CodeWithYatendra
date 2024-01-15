@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar1 from "./components/Navbar1";
-import Home from "./pages/home";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import Tutorial from "./pages/Tutorial";
 import Notes from "./pages/Notes";
@@ -26,6 +28,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
+      <Footer />
     </>
   );
 }
