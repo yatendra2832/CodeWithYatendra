@@ -6,7 +6,7 @@ const WorkWithUs = () => {
       <div className="p-3   bg-light shadow rounded-3 w-100 d-block  p-4">
         <div className="container-fluid d-flex flex-column-reverse flex-md-row align-items-center justify-content-around">
           <div className="w-lg-50 w-md-75 w-100">
-            <h2 className="text-center">
+            <h2 className="text-center text-primary fw-bold fs-2">
               Interested in working with us <br />
               Apply Now
             </h2>
