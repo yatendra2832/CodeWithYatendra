@@ -2,7 +2,7 @@ import React from "react";
 
 const NoteCard = ({ logoSrc, title }) => {
   return (
-    <div className="col-lg-3 col-md-2 col border mx-auto d-block p-4 rounded-5 shadow p-3 mb-5 bg-body rounded ">
+    <div className="col-lg-3 col-md-2 col col border mx-auto d-block p-4 rounded-5 shadow p-3 mb-5 bg-body rounded ">
       <img
         className="bd-placeholder-img rounded-circle mx-auto d-block"
         width="140"

@@ -7,7 +7,7 @@ const Notes = () => {
         Download Notes by CodeWithYatendra
       </h2>
 
-      <div className="row ">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 ">
         <NoteCard logoSrc="images/language_logo/htmllogo.png" title="HTML" />
         <NoteCard logoSrc="images/language_logo/csslogo.png" title="CSS" />
         <NoteCard
@@ -15,7 +15,7 @@ const Notes = () => {
           title="Javascript"
         />
       </div>
-      <div className="row">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3">
         <NoteCard
           logoSrc="images/language_logo/pythonlogo.png"
           title="Python"
@@ -23,7 +23,7 @@ const Notes = () => {
         <NoteCard logoSrc="images/language_logo/clogo.png" title="C" />
         <NoteCard logoSrc="images/language_logo/c++logo.png" title="C++" />
       </div>
-      <div className="row">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3row">
         <NoteCard logoSrc="images/language_logo/javalogo.png" title="Java" />
         <NoteCard
           logoSrc="images/language_logo/reactjslogo.png"
