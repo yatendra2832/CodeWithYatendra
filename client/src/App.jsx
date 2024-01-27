@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import WorkWithUs from "./pages/WorkWithUs";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Error from "./pages/Error";
 function App() {
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
           <Route path="/workwithus" element={<WorkWithUs />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </Router>
       <Footer />
