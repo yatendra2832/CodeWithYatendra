@@ -1,6 +1,43 @@
 import React from "react";
+import { useState } from "react";
 
 const WorkWithUs = () => {
+  const skillsOptions = [
+    "Subtitle Writer",
+    "Python Dev",
+    "PHP Dev",
+    "Javascript Dev",
+    "JAVA Dev",
+    "MERN Dev",
+    "Content Writer",
+    "Video Editor",
+  ];
+  const [workFormData, setWorkFormData] = useState({
+    username: "",
+    email: "",
+    phone: "",
+    resumeLink: "",
+    selectedSkill: "",
+    agreeToTerms: false,
+  });
+
+  // Handle input changes
+  const handleInputChange = (event) => {
+    const { id, value, type, checked } = event.target;
+
+    setWorkFormData((prevData) => ({
+      ...prevData,
+      [id]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Add your logic for handling the form data (e.g., sending it to a server)
+    console.log("Form Data:", workFormData);
+  };
+
   return (
     <>
       <div className="p-3   bg-light shadow rounded-3 w-100 d-block  p-4">
@@ -10,7 +47,7 @@ const WorkWithUs = () => {
               Interested in working with us <br />
               Apply Now
             </h2>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-2">
                 <label htmlFor="Username" className="form-label">
                   Username
@@ -18,7 +55,12 @@ const WorkWithUs = () => {
                 <input
                   type="text"
                   className="form-control"
-                  id="exampleInputtext"
+                  id="username"
+                  name="username"
+                  required
+                  autoComplete="off"
+                  value={workFormData.username}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="mb-2">
@@ -28,7 +70,12 @@ const WorkWithUs = () => {
                 <input
                   type="email"
                   className="form-control"
-                  id="exampleInputEmail1"
+                  id="email"
+                  name="email"
+                  required
+                  autoComplete="off"
+                  value={workFormData.email}
+                  onChange={handleInputChange}
                   aria-describedby="emailHelp"
                 />
                 <div id="emailHelp" className="form-text">
@@ -42,7 +89,12 @@ const WorkWithUs = () => {
                 <input
                   type="tel"
                   className="form-control"
-                  id="exampleinputtel"
+                  id="phone"
+                  name="phone"
+                  required
+                  autoComplete="off"
+                  value={workFormData.phone}
+                  onChange={handleInputChange}
                 />
               </div>
               <div className="mb-2">
@@ -52,114 +104,39 @@ const WorkWithUs = () => {
                 <input
                   type="url"
                   className="form-control"
-                  id="exampleinputurl"
+                  id="resumeLink"
+                  name="resumeLink"
+                  required
+                  autoComplete="off"
+                  value={workFormData.resumeLink}
+                  onChange={handleInputChange}
                 />
               </div>
-              <h3 className="text-center">Skills</h3>
-              <div className="form-check form-check-inline col-md-5">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio1"
-                  value="option1"
-                />
-                <label className="form-check-label" htmlFor="inlineRadio1">
-                  Subtitle Writer
+              <div className="mb-2">
+                <label htmlFor="Skills" className="form-label">
+                  Skills
                 </label>
-              </div>
-              <div className="form-check form-check-inline col-md-5">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio2"
-                  value="option2"
-                />
-                <label className="form-check-label" htmlFor="inlineRadio2">
-                  Python Dev
-                </label>
-              </div>
-              <div className="form-check form-check-inline col-md-5">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio3"
-                  value="option3"
-                />
-                <label className="form-check-label" htmlFor="inlineRadio3">
-                  PHP Dev{" "}
-                </label>
-              </div>
-              <div className="form-check form-check-inline col-md-5">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio4"
-                  value="option4"
-                />
-                <label className="form-check-label" htmlFor="inlineRadio4">
-                  Javascript Dev{" "}
-                </label>
-              </div>
-              <div className="form-check form-check-inline col-md-5">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio5"
-                  value="option5"
-                />
-                <label className="form-check-label" htmlFor="inlineRadio5">
-                  JAVA Dev{" "}
-                </label>
-              </div>
-              <div className="form-check form-check-inline col-md-5">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio6"
-                  value="option6"
-                />
-                <label className="form-check-label" htmlFor="inlineRadio6">
-                  {" "}
-                  MERN Dev
-                </label>
-              </div>
-              <div className="form-check form-check-inline col-md-5">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio7"
-                  value="option7"
-                />
-                <label className="form-check-label" htmlFor="inlineRadio7">
-                  {" "}
-                  Content Writer
-                </label>
-              </div>
-              <div className="form-check form-check-inline col-md-5">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio8"
-                  value="option8"
-                />
-                <label className="form-check-label" htmlFor="inlineRadio8">
-                  {" "}
-                  Video Editor
-                </label>
+                <select
+                  className="form-select"
+                  id="selectedSkill"
+                  name="selectedSkill"
+                  value={workFormData.selectedSkill}
+                  onChange={handleInputChange}
+                >
+                  <option value="" className="fw-bold ">Select a skill</option>
+                  {skillsOptions.map((skill, index) => (
+                    <option key={index} value={skill}>
+                      {skill}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="mb-3 form-check">
                 <input
                   type="checkbox"
                   className="form-check-input"
-                  id="exampleCheck1"
+                  id="agreeToTerms"
+                  onChange={handleInputChange}
                 />
                 <label className="form-check-label" htmlFor="exampleCheck1">
                   I agree to the terms and conditions
