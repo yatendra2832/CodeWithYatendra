@@ -1,7 +1,5 @@
 const { Schema, model, default: mongoose } = require('mongoose');
 
-const skillsEnum = ['Subtitle Writer', 'Python Dev', 'PHP Dev', 'Javascript Dev', 'JAVA Dev', 'MERN Dev', 'Content Writer', 'Video Editor'];
-
 const applicationSchema = new Schema({
     username: {
         type: String,
@@ -20,12 +18,11 @@ const applicationSchema = new Schema({
         type: String,
         required: true
     },
-    skills: {
+    selectedSkill: {
         type: String,
-        enums: skillsEnum,
         required: true
     },
-    isAgreed: {
+    agreeToTerms: {
         type: Boolean,
         required: true
     },
