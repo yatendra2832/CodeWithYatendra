@@ -32,10 +32,37 @@ const WorkWithUs = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/application/applicationForm",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(workFormData),
+        }
+      );
+      
+      if (response.ok) {
+        setWorkFormData({
+          username: "",
+          email: "",
+          phone: "",
+          resumeLink: "",
+          selectedSkill: "",
+          agreeToTerms: false,
+        });
+      }
+      console.log("Form Data:", workFormData);
+    } catch (error) {
+      console.log("Application Form Error:", error);
+    }
+
     // Add your logic for handling the form data (e.g., sending it to a server)
-    console.log("Form Data:", workFormData);
   };
 
   return (
@@ -123,7 +150,9 @@ const WorkWithUs = () => {
                   value={workFormData.selectedSkill}
                   onChange={handleInputChange}
                 >
-                  <option value="" className="fw-bold ">Select a skill</option>
+                  <option value="" className="fw-bold ">
+                    Select a skill
+                  </option>
                   {skillsOptions.map((skill, index) => (
                     <option key={index} value={skill}>
                       {skill}
