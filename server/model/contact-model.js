@@ -10,11 +10,11 @@ const contactSchema = new mongoose.Schema({
         required: true
     },
     message: {
-        type: string,
+        type: String,
         required: true
     }
 })
 
-const Contact = new model('Contact', contactSchema)
+const Contact = mongoose.model('Contact', contactSchema)
 
 module.exports = Contact;

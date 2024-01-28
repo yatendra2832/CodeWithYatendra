@@ -15,7 +15,7 @@ const contactRouter = require('./Router/contact-router');
 app.use(express.json());
 app.use('/api/auth', authRouter);
 app.use('/api/form', applicationRouter);
-app.use('/api/contact', contactRouter);
+app.use('/api/form', contactRouter);
 app.use(errorMiddleware);
 
 const PORT = 5000;
