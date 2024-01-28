@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 const signup = () => {
   const [user, setUser] = useState({
     username: "",
@@ -19,10 +18,26 @@ const signup = () => {
   };
 
   // handling the form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(user);
-    console.log(user);
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/auth/registration",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        }
+      );
+      if (response.ok) {
+        setUser({ username: "", email: "", phone: "", password: "" });
+      }
+      console.log(response);
+    } catch (error) {
+      console.log("Registration Error:", error);
+    }
   };
 
   return (
