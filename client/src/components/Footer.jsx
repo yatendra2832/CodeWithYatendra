@@ -19,20 +19,53 @@ const Footer = () => {
           </div>
 
           <ul className="nav col-md-4 justify-content-end list-unstyled d-flex fs-2 m">
-            <li className=" ms-3">
-              <FaInstagram />
+            <li className=" ms-3 ">
+              <a
+                href="https://www.instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-danger"
+              >
+                <FaInstagram />
+              </a>
             </li>
             <li className="ms-3 text-primary">
-              <FaFacebook />
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebook />
+              </a>
             </li>
             <li className="ms-3 text-danger">
-              <FaYoutubeSquare />
+              <a
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-danger"
+              >
+                <FaYoutubeSquare />
+              </a>
             </li>
             <li className="ms-3 text-primary">
-              <FaTwitterSquare />
+              <a
+                href="https://www.twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary"
+              >
+                <FaTwitterSquare />
+              </a>
             </li>
             <li className="ms-3 text-primary">
-              <FaLinkedin />
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin />
+              </a>
             </li>
           </ul>
         </footer>
