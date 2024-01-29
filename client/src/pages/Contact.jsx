@@ -16,9 +16,32 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(contact);
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/contact/contactForm",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(contact),
+        }
+      );
+
+      if (response.ok) {
+        setContact({
+          username: "",
+          email: "",
+          message: "",
+        });
+        alert('Contact Form submitted successfully!')
+      }
+      console.log(contact);
+    } catch (error) {
+      console.log("Contact Form Error : ", error);
+    }
   };
   return (
     <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative my-4 mx-4">
