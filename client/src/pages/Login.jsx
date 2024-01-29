@@ -16,9 +16,27 @@ const Login = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+      if (response.ok) {
+        console.log(response);
+        setUser({
+          email: "",
+          password: "",
+        });
+      }
+      console.log(user);
+    } catch (error) {
+      console.log("Login Error", error);
+    }
   };
 
   return (
