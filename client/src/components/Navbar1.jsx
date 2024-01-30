@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../store/auth";
+import Userprofile from "./Userprofile";
 const Navbar1 = () => {
   const { isLoggedIn } = useAuth();
   return (
@@ -65,13 +66,12 @@ const Navbar1 = () => {
               </ul>
             </div>
 
-            <div className="d-flex justify-content-end  ">
+            <div className="d-flex justify-content-center ">
               {isLoggedIn ? (
-                <Link to={"/logout"}>
-                  <button className="btn btn-success btn-md px-3 mx-2">
-                    Logout
-                  </button>
-                </Link>
+              
+                  <Userprofile />
+                  
+              
               ) : (
                 <>
                   <Link to={"/signup"}>
