@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useAuth } from "../store/auth";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
-  const {storeTokenInLS} = useAuth();
+  const { storeTokenInLS } = useAuth();
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -35,8 +37,9 @@ const Login = () => {
           email: "",
           password: "",
         });
+        navigate("/");
       }
-      console.log(user);
+      // console.log(user);
     } catch (error) {
       console.log("Login Error", error);
     }

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../store/auth";
+import { useNavigate } from "react-router-dom";
+
 const signup = () => {
   const [user, setUser] = useState({
     username: "",
@@ -7,6 +9,7 @@ const signup = () => {
     phone: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const { storeTokenInLS } = useAuth();
 
@@ -23,7 +26,7 @@ const signup = () => {
   // handling the form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       const response = await fetch(
         "http://localhost:5000/api/auth/registration",
@@ -37,12 +40,12 @@ const signup = () => {
       );
       if (response.ok) {
         const res_data = await response.json();
-        console.log("Res from server", res_data);
+        console.log("Res from server", res_data.msg);
         storeTokenInLS(res_data.token);
 
         setUser({ username: "", email: "", phone: "", password: "" });
+        navigate("/");
       }
-      console.log(response);
     } catch (error) {
       console.log("Registration Error:", error);
     }
