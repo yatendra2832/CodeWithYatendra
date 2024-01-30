@@ -12,6 +12,7 @@ import WorkWithUs from "./pages/WorkWithUs";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Error from "./pages/Error";
+import Logout from "./pages/Logout";
 function App() {
   return (
     <>
@@ -27,6 +28,7 @@ function App() {
           <Route path="/workwithus" element={<WorkWithUs />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
