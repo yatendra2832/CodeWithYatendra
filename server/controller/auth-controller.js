@@ -38,6 +38,7 @@ const registration = async (req, res) => {
     }
 }
 
+// Login Logic
 const login = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -64,4 +65,16 @@ const login = async (req, res) => {
         res.status(500).send("Internal Server Error : ", error);
     }
 }
-module.exports = { home, registration, login }
+
+//to send user data User Logic
+const user = async (req, res) => {
+    try {
+        const userData = req.user;
+        console.log(userData);
+        return res.status(200).json({ msg: userData })
+    } catch (error) {
+        console.log('Error from the user Route', error);
+    }
+}
+
+module.exports = { home, registration, login, user };
