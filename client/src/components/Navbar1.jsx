@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../store/auth";
 const Navbar1 = () => {
+  const { isLoggedIn } = useAuth();
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary bg-light border-bottom sticky-top">
@@ -64,17 +66,26 @@ const Navbar1 = () => {
             </div>
 
             <div className="d-flex justify-content-end  ">
-              <Link to={"/signup"}>
-                <button className="btn btn-primary btn-md px-3 mx-2">
-                  SignUp
-                </button>
-              </Link>
-
-              <Link to={"/login"}>
-                <button className="btn btn-primary btn-md px-4 mx-2">
-                  Login
-                </button>
-              </Link>
+              {isLoggedIn ? (
+                <Link to={"/logout"}>
+                  <button className="btn btn-success btn-md px-3 mx-2">
+                    Logout
+                  </button>
+                </Link>
+              ) : (
+                <>
+                  <Link to={"/signup"}>
+                    <button className="btn btn-primary btn-md px-3 mx-2">
+                      SignUp
+                    </button>
+                  </Link>
+                  <Link to={"/login"}>
+                    <button className="btn btn-primary btn-md px-4 mx-2">
+                      Login
+                    </button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
