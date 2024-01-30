@@ -1,3 +1,6 @@
+const jwt = require('jsonwebtoken');
+const User = require('../model/user-model');
+
 const authMiddleware = async (req, res, next) => {
     // Extract the JWT from the Authorization header
     const token = req.header('Authorization');
@@ -31,3 +34,5 @@ const authMiddleware = async (req, res, next) => {
         res.status(401).json({ message: "Unauthorized, Invalid Token" });
     }
 };
+
+module.exports = authMiddleware;
