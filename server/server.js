@@ -10,7 +10,7 @@ const errorMiddleware = require('./middleware/error.middleware')
 const authRouter = require('./Router/auth-router');
 const applicationRouter = require('./Router/application-router');
 const contactRouter = require('./Router/contact-router');
-
+const adminRouter = require('./Router/admin-router')
 
 // Middlewares
 const corsOptions = {
@@ -23,6 +23,7 @@ app.use(express.json());
 app.use('/api/auth', authRouter);
 app.use('/api/application', applicationRouter);
 app.use('/api/contact', contactRouter);
+app.use('/api/admin', adminRouter);
 app.use(errorMiddleware);
 
 const PORT = 5000;
