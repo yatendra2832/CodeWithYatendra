@@ -66,7 +66,7 @@ const Navbar1 = () => {
               </ul>
             </div>
 
-            <div className="d-flex justify-content-center ">
+            <div className="d-flex justify-content-start ">
               {isLoggedIn ? (
               
                   <Userprofile />
