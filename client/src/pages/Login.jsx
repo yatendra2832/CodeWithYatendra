@@ -29,15 +29,19 @@ const Login = () => {
         },
         body: JSON.stringify(user),
       });
-      if (response.ok) {
-        const res_data = await response.json();
-        storeTokenInLS(res_data.token);
 
+      const res_data = await response.json();
+      console.log("Res from server", res_data.extraDetails);
+
+      if (response.ok) {
+        storeTokenInLS(res_data.token);
         setUser({
           email: "",
           password: "",
         });
         navigate("/");
+      } else {
+        alert(res_data.extraDetails ? res_data.extraDetails : res_data.message);
       }
       // console.log(user);
     } catch (error) {

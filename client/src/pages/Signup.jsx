@@ -38,13 +38,17 @@ const signup = () => {
           body: JSON.stringify(user),
         }
       );
+
+      const res_data = await response.json();
+      console.log("Res from server", res_data.extraDetails);
+
       if (response.ok) {
-        const res_data = await response.json();
-        console.log("Res from server", res_data.msg);
         storeTokenInLS(res_data.token);
 
         setUser({ username: "", email: "", phone: "", password: "" });
         navigate("/");
+      } else {
+        alert(res_data.extraDetails ? res_data.extraDetails : res_data.message);
       }
     } catch (error) {
       console.log("Registration Error:", error);
