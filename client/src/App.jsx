@@ -13,6 +13,12 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Error from "./pages/Error";
 import Logout from "./pages/Logout";
+
+import AdminLayout from "./components/layouts/Admin-Layout";
+import AdminUsers from "./pages/AdminPages/AdminUsers";
+import AdminContacts from "./pages/AdminPages/AdminContacts"
+import AdminApplications from "./pages/AdminPages/AdminApplications"
+
 function App() {
   return (
     <>
@@ -30,6 +36,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<Error />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route path="users" element={<AdminUsers/>} />
+            <Route path="contacts" element={<AdminContacts/>} />
+            <Route path="applications" element={<AdminApplications/>} />
+          </Route>
         </Routes>
       </Router>
       <Footer />
