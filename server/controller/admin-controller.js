@@ -2,7 +2,7 @@ const User = require('../model/user-model')
 const Contact = require('../model/contact-model')
 const Application = require('../model/application-model')
 
-// Users
+// Users //
 // getting all users
 const getAllUsers = async (req, res) => {
     try {
@@ -14,6 +14,17 @@ const getAllUsers = async (req, res) => {
     } catch (error) {
         next(error);
 
+    }
+}
+//delete User by id
+const deleteUserById = async (req, res) => {
+    try {
+        const id = req.params.id;
+        await User.deleteOne({ _id: id })
+        return res.status(200).json({message:"User Deleted Successfully"})
+
+    } catch (error) {
+        next(error)
     }
 }
 
@@ -45,4 +56,4 @@ const getAllApplication = async (req, res) => {
         next(error)
     }
 }
-module.exports = { getAllUsers, getAllContacts, getAllApplication }
+module.exports = { getAllUsers, getAllContacts, getAllApplication, deleteUserById }

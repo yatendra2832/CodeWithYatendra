@@ -5,7 +5,7 @@ const authMiddleware = require('../middleware/auth-middleware')
 const adminMiddleware = require('../middleware/admin-middleware')
 // users related routes
 router.route('/users').get(authMiddleware,adminMiddleware,adminController.getAllUsers);
-
+router.route('/users/delete/:id').delete(authMiddleware,adminMiddleware,adminController.deleteUserById)
 // contact related routes
 router.route('/contacts').get(authMiddleware,adminMiddleware,adminController.getAllContacts);
 
