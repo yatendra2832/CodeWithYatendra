@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Typed from "typed.js";
 import LearnSection from "../components/LearnSection";
 const Home = () => {
@@ -26,15 +27,18 @@ const Home = () => {
               </p>
               <div className="row d-flex  my-4">
                 <div className="col col-md-6 col-sm-12">
-                  <button className="btn btn-primary mx-2 mb-0 my-0 w-100">
-                    Free Courses
-                  </button>
+                  <Link to={"/courses"}>
+                    <button className="btn btn-primary mx-2 mb-0 my-0 w-100">
+                      Free Courses
+                    </button>
+                  </Link>
                 </div>
                 <div className="col col-md-6 col-sm-12">
-                  {" "}
-                  <button className="btn btn-outline-dark mx-2 mb-0 my-0 w-100">
-                    Explore Blog
-                  </button>
+                  <Link to={"/blog"}>
+                    <button className="btn btn-outline-dark mx-2 mb-0 my-0 w-100">
+                      Explore Blog
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
