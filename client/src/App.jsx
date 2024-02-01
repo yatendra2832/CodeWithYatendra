@@ -15,9 +15,9 @@ import Error from "./pages/Error";
 import Logout from "./pages/Logout";
 
 import AdminLayout from "./components/layouts/Admin-Layout";
-import AdminUsers from "./pages/AdminPages/AdminUsers";
-import AdminContacts from "./pages/AdminPages/AdminContacts"
-import AdminApplications from "./pages/AdminPages/AdminApplications"
+import AdminUsers from "./pages/AdminUsers";
+import AdminContacts from "./pages/AdminContacts";
+import AdminApplications from "./pages/AdminApplications";
 
 function App() {
   return (
@@ -37,9 +37,9 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<Error />} />
           <Route path="/admin" element={<AdminLayout />}>
-            <Route path="users" element={<AdminUsers/>} />
-            <Route path="contacts" element={<AdminContacts/>} />
-            <Route path="applications" element={<AdminApplications/>} />
+            <Route path="users" element={<AdminUsers />} />
+            <Route path="contacts" element={<AdminContacts />} />
+            <Route path="applications" element={<AdminApplications />} />
           </Route>
         </Routes>
       </Router>
