@@ -19,7 +19,7 @@ import AdminUsers from "./pages/AdminUsers";
 import AdminContacts from "./pages/AdminContacts";
 import AdminApplications from "./pages/AdminApplications";
 import Profile from "./pages/Profile";
-
+import AdminUpdate from "./pages/AdminUpdate";
 function App() {
   return (
     <>
@@ -42,6 +42,7 @@ function App() {
             <Route path="users" element={<AdminUsers />} />
             <Route path="contacts" element={<AdminContacts />} />
             <Route path="applications" element={<AdminApplications />} />
+            <Route path="users/:id/edit" element={<AdminUpdate />} />
           </Route>
         </Routes>
       </Router>
