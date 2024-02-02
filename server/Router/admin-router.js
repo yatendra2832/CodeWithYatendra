@@ -10,7 +10,7 @@ router.route('/users/:id').get(authMiddleware, adminMiddleware, adminController.
 
 router.route('/users/delete/:id').delete(authMiddleware, adminMiddleware, adminController.deleteUserById)
 
-router.route('/users/update/:id').put(authMiddleware, adminMiddleware, adminController.updateUSerById);
+router.route('/users/update/:id').put(authMiddleware, adminMiddleware, adminController.updateUserById);
 
 // contact related routes
 router.route('/contacts').get(authMiddleware, adminMiddleware, adminController.getAllContacts);
