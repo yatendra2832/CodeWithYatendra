@@ -65,6 +65,18 @@ const getAllContacts = async (req, res) => {
     }
 
 }
+// delete contact by thier id
+const deleteContactById = async (req, res) => {
+    try {
+        const id = req.params.id
+        await Contact.deleteOne({ _id: id })
+        return res.status(200).json({ message: "Contact Deleted Successfully" });
+    } catch (error) {
+        next(error)
+    }
+
+
+}
 
 // Application
 // getting all the application form
@@ -80,4 +92,4 @@ const getAllApplication = async (req, res) => {
     }
 }
 
-module.exports = { getAllUsers, getAllContacts, getAllApplication, deleteUserById, getUserById, updateUserById }
+module.exports = { getAllUsers, getAllContacts, getAllApplication, deleteUserById, getUserById, updateUserById ,deleteContactById }

@@ -43,6 +43,7 @@ const Login = () => {
           password: "",
         });
         navigate("/");
+        window.location.reload();
       } else {
         toast.error(
           res_data.extraDetails ? res_data.extraDetails : res_data.message
