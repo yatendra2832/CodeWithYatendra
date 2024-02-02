@@ -92,4 +92,14 @@ const getAllApplication = async (req, res) => {
     }
 }
 
-module.exports = { getAllUsers, getAllContacts, getAllApplication, deleteUserById, getUserById, updateUserById ,deleteContactById }
+const deleteApplicationById = async(req,res)=>{
+    try {
+        const id = req.params.id
+        await Application.deleteOne({_id:id})
+        return res.status(200).json({message:"Application Deleted Successfully"});
+    } catch (error) {
+        next(error)
+    }
+}
+
+module.exports = { getAllUsers, getAllContacts, getAllApplication, deleteUserById, getUserById, updateUserById ,deleteContactById ,deleteApplicationById}

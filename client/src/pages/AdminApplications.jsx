@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../store/auth";
+import { toast } from "react-toastify";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 const AdminApplications = () => {
   const [applications, setApplications] = useState([]);
@@ -21,6 +24,44 @@ const AdminApplications = () => {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const deleteApplication = async (id) => {
+    confirmAlert({
+      title: "Confirm Deletion",
+      message: "Are you sure you want to delete this Application?",
+      buttons: [
+        {
+          label: "Yes",
+          onClick: async () => {
+            try {
+              const response = await fetch(
+                `http://localhost:5000/api/admin/applications/delete/${id}`,
+                {
+                  method: "DELETE",
+                  headers: {
+                    Authorization: AuthorizationToken,
+                  },
+                }
+              );
+              const data = await response.json();
+              if (response.ok) {
+                getAllApplications();
+                toast.success("Application Deleted Successfully");
+              }
+            } catch (error) {
+              console.log(error);
+            }
+          },
+        },
+        {
+          label: "No",
+          onClick: () => {
+            // Do nothing if the user clicks "No"
+          },
+        },
+      ],
+    });
   };
 
   useEffect(() => {
@@ -54,7 +95,12 @@ const AdminApplications = () => {
                   <td>{curApplication.resumeLink}</td>
                   <td>{curApplication.selectedSkill}</td>
                   <td>
-                    <button className="btn btn-danger btn-sm">Delete</button>
+                    <button
+                      className="btn btn-danger btn-sm"
+                      onClick={() => deleteApplication(curApplication._id)}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}

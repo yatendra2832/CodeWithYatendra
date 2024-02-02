@@ -21,4 +21,5 @@ router.route('/contacts/delete/:id').delete(authMiddleware,adminMiddleware,admin
 // application related routes
 router.route('/applications').get(authMiddleware, adminMiddleware, adminController.getAllApplication);
 
+router.route('/applications/delete/:id').delete(authMiddleware,adminMiddleware,adminController.deleteApplicationById)
 module.exports = router;
