@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 const AdminUsers = () => {
   const [users, setUsers] = useState([]);
   const { AuthorizationToken } = useAuth();
@@ -22,35 +24,72 @@ const AdminUsers = () => {
   };
 
   // delete the user on delete button
+  // const deleteUser = async (id) => {
+  //   const isConfirmed = window.confirm(
+  //     "Are you sure you want to delete this user?"
+  //   );
+
+  //   if (!isConfirmed) {
+  //     return; // If the user cancels, do nothing
+  //   }
+  //   try {
+  //     const response = await fetch(
+  //       `http://localhost:5000/api/admin/users/delete/${id}`,
+  //       {
+  //         method: "DELETE",
+  //         headers: {
+  //           Authorization: AuthorizationToken,
+  //         },
+  //       }
+  //     );
+  //     const data = await response.json();
+  //     if (response.ok) {
+  //       getAllUsersData();
+  //       toast.success("User Deleted Successfully");
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  //   // console.log(id);
+  // };
+
   const deleteUser = async (id) => {
-    const isConfirmed = window.confirm(
-      "Are you sure you want to delete this user?"
-    );
-
-    if (!isConfirmed) {
-      return; // If the user cancels, do nothing
-    }
-    try {
-      const response = await fetch(
-        `http://localhost:5000/api/admin/users/delete/${id}`,
+    confirmAlert({
+      title: "Confirm Deletion",
+      message: "Are you sure you want to delete this user?",
+      buttons: [
         {
-          method: "DELETE",
-          headers: {
-            Authorization: AuthorizationToken,
+          label: "Yes",
+          onClick: async () => {
+            try {
+              const response = await fetch(
+                `http://localhost:5000/api/admin/users/delete/${id}`,
+                {
+                  method: "DELETE",
+                  headers: {
+                    Authorization: AuthorizationToken,
+                  },
+                }
+              );
+              const data = await response.json();
+              if (response.ok) {
+                getAllUsersData();
+                toast.success("User Deleted Successfully");
+              }
+            } catch (error) {
+              console.log(error);
+            }
           },
-        }
-      );
-      const data = await response.json();
-      if (response.ok) {
-        getAllUsersData();
-        toast.success("User Deleted Successfully");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    // console.log(id);
+        },
+        {
+          label: "No",
+          onClick: () => {
+            // Do nothing if the user clicks "No"
+          },
+        },
+      ],
+    });
   };
-
   useEffect(() => {
     getAllUsersData();
   }, []);
